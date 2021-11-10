@@ -54,11 +54,12 @@ namespace Kurochkin.SampleFacts.Web.Data
                 UserName = userName,
                 PhoneNumberConfirmed = true,
                 NormalizedUserName = userName.ToUpper(),
-                SecurityStamp = Guid.NewGuid().ToString("D")
+                SecurityStamp = Guid.NewGuid().ToString("D"),
+                
             };
 
             var passwordHasher = new PasswordHasher<IdentityUser>();
-            var passwordHash = passwordHasher.HashPassword(user, "123qwe!@#");
+            user.PasswordHash = passwordHasher.HashPassword(user, "123qwe!@#");
 
             var userStore = new UserStore<IdentityUser>(context);
             var identityResult = await userStore.CreateAsync(user);
