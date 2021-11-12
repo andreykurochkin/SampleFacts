@@ -1,4 +1,4 @@
-﻿using Kurochkin.SampleFacts.Web.Models;
+﻿using Kurochkin.SampleFacts.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

@@ -1,4 +1,5 @@
 using Kurochkin.SampleFacts.Web.Data;
+using Kurochkin.SampleFacts.Web.Infrastructure.Mappers.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -36,7 +37,14 @@ namespace Kurochkin.SampleFacts.Web
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            // 
+            //MapperRegistration.GetMapperConfiguration();
+
+            services.AddAutoMapper(typeof(Startup).Assembly);
+
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

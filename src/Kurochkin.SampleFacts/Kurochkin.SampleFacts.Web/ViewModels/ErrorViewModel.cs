@@ -1,6 +1,6 @@
 using System;
 
-namespace Kurochkin.SampleFacts.Web.Models
+namespace Kurochkin.SampleFacts.Web.ViewModels
 {
     public class ErrorViewModel
     {
